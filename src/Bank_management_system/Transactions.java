@@ -16,14 +16,14 @@ public class Transactions extends Account{
     private int TransactionAmount;
     private double amount;
 
-    public Transactions(String data, int TransactionID, String type,int TransactionAmount,double amount) {
+    public Transactions(String data, int TransactionID, String type, int TransactionAmount, double amount, int AccountNo, String AccountType, double balance, Client owner) {
+        super(AccountNo, AccountType, balance, owner);
         this.data = data;
         this.TransactionID = TransactionID;
         this.type = type;
         this.TransactionAmount = TransactionAmount;
         this.amount = amount;
-    }
-    
+    } 
     
 
     public String getData() {
@@ -50,14 +50,14 @@ public class Transactions extends Account{
         this.type = type;
     }
     
-    void TransferMoney(){}
-    
     void withDraw(double amount){
     if (amount<balance)            
             balance -= amount;
     }
-    void Depsit (double amount){
+    void Deposit (double amount){
      balance += amount;
     }
+    
+    void TransferMoney(){}
     
 }

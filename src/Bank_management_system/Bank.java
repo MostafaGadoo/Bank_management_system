@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project;
+package Bank_management_system;
 
 /**
  *
  * @author agh
  */
 import java.util.ArrayList;
-public class Bank {
+public class Bank{
     String address;
     int code;
 ArrayList<Client> customers;
@@ -46,5 +46,7 @@ ArrayList<Client> customers;
         }
         return null;
     }
+      
+      void manages(){}
 }
 

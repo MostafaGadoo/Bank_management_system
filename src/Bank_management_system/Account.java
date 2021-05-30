@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project;
+package Bank_management_system;
 
 /**
  *
@@ -53,5 +53,10 @@ public class Account {
     public void setOwner(Client owner) {
     this.owner=owner;
     }
+    
+    void savingAccount (){}
+    
+    
+    void currentAccount (){}
 }
 

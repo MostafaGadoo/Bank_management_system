@@ -5,14 +5,33 @@
  */
 package Bank_management_system;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Mostafa Gado
  */
-public class ATM {
+public class ATM extends Bank{
     private String location;
     private String managedBy;
     private double Abalance;
+    private Account Balance;
+    Transactions transaction;
+
+    public ATM(String address, int code, ArrayList<Client> customers) {
+        super(address, code, customers);
+    }
+
+    public ATM(String location, String managedBy, double Abalance, Account Balance, Transactions transaction, String address, int code, ArrayList<Client> customers) {
+        super(address, code, customers);
+        this.location = location;
+        this.managedBy = managedBy;
+        this.Abalance = Abalance;
+        this.Balance = Balance;
+        this.transaction = transaction;
+    }
+    
+    
 
     public double getAbalance() {
         return Abalance;
@@ -38,15 +57,21 @@ public class ATM {
         this.managedBy = managedBy;
     }
     
-    double checkBalance(){
+    boolean checkBalance(){
         
-        if (balance <= Abalance)
-            
-        return 0;
+        if (Balance.getBalance() <= Abalance)
+        return true;
+        else
+        return false;
     }
     
     
-    void Transactions(){
-    
+    void Transactions(double amount){
+    if (checkBalance() == true){
+        transaction.withDraw(amount);
+        System.out.println("Transaction success");
+        Abalance -= amount;
+    }else
+            System.out.println("The amount in the ATM is less than tha amount needed");
     }
 }
