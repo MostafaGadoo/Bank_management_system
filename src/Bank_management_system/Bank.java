@@ -13,7 +13,9 @@ import java.util.ArrayList;
 public class Bank{
     String address;
     int code;
-ArrayList<Client> customers;
+    Account accountUser;
+    ArrayList<Client> customers;
+    ArrayList <Account> account;
     public String getAddress() {
         return address;
     }
@@ -47,6 +49,14 @@ ArrayList<Client> customers;
         return null;
     }
       
-      void manages(){}
+      public void createAccount(int AccountNo, String AccountType, double balance, Client owner,Account accountType) {
+      
+            Account AccountUser = new Account(AccountNo, AccountType, balance, owner);
+            accountUser.setAccountType(AccountType);
+            account.add(AccountUser);
+            System.out.println("Admin user has been created successfully");
+        }
+      
+      
 }
 

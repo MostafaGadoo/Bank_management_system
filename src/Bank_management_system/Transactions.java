@@ -15,6 +15,7 @@ public class Transactions extends Account{
     private String type;
     private int TransactionAmount;
     private double amount;
+    //private Account acocount1,account2;
 
     public Transactions(String data, int TransactionID, String type, int TransactionAmount, double amount, int AccountNo, String AccountType, double balance, Client owner) {
         super(AccountNo, AccountType, balance, owner);
@@ -50,14 +51,16 @@ public class Transactions extends Account{
         this.type = type;
     }
     
-    void withDraw(double amount){
-    if (amount<balance)            
-            balance -= amount;
+    public void transferTo(Account A1,Account A2, double x) {
+    if (x <= balance) {
+        A1.withDraw(x);
+        A2.Deposit(x);
+        System.out.println("\nTransfer succesful. Tansfered: $" + A1.getBalance());
+    } else if (x > balance) {
+        System.out.println("\nTransfer failed, not enough balance!");
     }
-    void Deposit (double amount){
-     balance += amount;
-    }
+}
     
-    void TransferMoney(){}
+    
     
 }

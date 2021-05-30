@@ -54,9 +54,13 @@ public class Account {
     this.owner=owner;
     }
     
-    void savingAccount (){}
-    
-    
-    void currentAccount (){}
+    void withDraw(double amount){
+    if (amount<balance)            
+            balance -= amount;
+    }
+    void Deposit (double amount){
+     balance += amount;
+    }
+   
 }
 
