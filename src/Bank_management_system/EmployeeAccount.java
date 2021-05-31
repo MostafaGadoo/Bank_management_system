@@ -5,6 +5,8 @@
  */
 package Bank_management_system;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author agh
@@ -16,7 +18,8 @@ public class EmployeeAccount {
     private String password;
     static int accountID;
     private int DOB;
-
+    ArrayList<EmployeeAccount> Employee;
+    
     public EmployeeAccount(String userName, String password,String AccountType, double balance,int DOB) {
         this.AccountType = AccountType;
         this.balance = balance;
@@ -74,6 +77,26 @@ public class EmployeeAccount {
 
     public void setDOB(int DOB) {
         this.DOB = DOB;
+    }
+
+    public ArrayList<EmployeeAccount> getEmployee() {
+        return Employee;
+    }
+
+    public void setEmployee(ArrayList<EmployeeAccount> Employee) {
+        this.Employee = Employee;
+    }
+    
+    public EmployeeAccount login (String name, String pass)
+    {
+        EmployeeAccount cust  = null;
+        for (int i=0; i<Employee.size(); i++)
+        { 
+            cust = (EmployeeAccount) Employee.get(i);
+            if (cust.getUserName().equals(name) && cust.getPassword().equals(pass))
+                return cust;
+        }
+        return null;
     }
    
 }
