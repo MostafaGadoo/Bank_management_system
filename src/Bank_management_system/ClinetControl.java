@@ -11,32 +11,34 @@ import java.util.ArrayList;
  *
  * @author Mostafa Gado
  */
-public class ClinetControl extends Account {
+public class ClinetControl extends Client {
 
-    Account accountUser;
-    ArrayList <Account> account;
+    Client clientUser;
+    ArrayList <Client> Client;
     
-    public ClinetControl(String userName,String password,String AccountType, double balance) {
-        super(userName,password, AccountType, balance);
+
+    public ClinetControl(String username, String password, String DOB, String AccountType, double balance) {
+        super(username, password, DOB, AccountType, balance);
     }
+
+   
     
-    public void createAccount(String userName,String password,String AccountType, double balance) {
-      
-            Account AccountUser = new Account(userName,password, AccountType, balance);
-            accountUser.setAccountType(AccountType);
-            account.add(AccountUser);
-            System.out.println("Admin user has been created successfully");
+    
+    public void createAccount(String username, String password, String DOB, String AccountType, double balance) {
+            Client clientUser = new Client(username,password, DOB, AccountType,balance);
+            Client.add(clientUser);
+            System.out.println("Client account has been successfully created");
         }
     
     public void changePassword(String Newpassword){
-    accountUser.setPassword(Newpassword);
+    clientUser.setPassword(Newpassword);
     }
     
     public double viewBalance (){
-    return accountUser.getBalance();
+    return clientUser.getBalance();
     }
     
     public void updateBalance(double updatedBalace){
-    accountUser.setBalance(updatedBalace);
+    clientUser.setBalance(updatedBalace);
     }
 }

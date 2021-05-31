@@ -15,7 +15,7 @@ public class ATM {
     private String location;
     private int ATM_id;
     private double ATM_balance;
-    private Account AccountBalance;
+    private EmployeeAccount AccountBalance;
 
     
 
@@ -49,7 +49,7 @@ public class ATM {
         this.ATM_id = ATM_id;
     }
 
-    public Account getBalance() {
+    public EmployeeAccount getBalance() {
         return AccountBalance;
     }
     

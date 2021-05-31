@@ -12,15 +12,21 @@ import java.util.Scanner;
  *
  * @author Mostafa Gado
  */
-public class BankControl extends Account{
+public class BankControl extends EmployeeAccount{
     
-     Account accountUser;
-    ArrayList <Account> account;
+     EmployeeAccount accountUser;
+    ArrayList <EmployeeAccount> account;
 
-    public BankControl(String userName, String password, String AccountType, double balance) {
-        super(userName, password, AccountType, balance);
+    public BankControl(String userName, String password, String AccountType, double balance, int DOB) {
+        super(userName, password, AccountType, balance, DOB);
     }
+
     
+    public void createAccount(String userName, String password,String AccountType, double balance,int DOB) {
+            EmployeeAccount accountUser = new EmployeeAccount(userName,password,AccountType,balance,DOB);
+            account.add(accountUser);
+            System.out.println("Employee account has been successfully created");
+        }
     
     public boolean searchAcount(int acountID){
         for (int i =0; i < account.size();i++){
@@ -35,7 +41,7 @@ public class BankControl extends Account{
     }
         
     
-    public Account deleteAccount(int accountID){
+    public EmployeeAccount deleteAccount(int accountID){
     for (int i =0; i <= account.size();i++){
         if (accountID == accountUser.getAccountID())
         return account.remove(accountID);
@@ -43,16 +49,7 @@ public class BankControl extends Account{
         return null;
     }
     
-//    public Account updateAccount (int accountID){
-//    for (int i =0; i <= account.size();i++){
-//        if (accountID == accountUser.getAccountID())
-//            System.out.println("Please enter what you need to update");
-//            Scanner update = new Scanner(System.in);
-//            int Updated = update.nextInt();
-//            
-//        }   
-//        return null;
-//    }
+
     
     
 }

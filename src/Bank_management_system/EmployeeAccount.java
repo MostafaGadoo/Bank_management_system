@@ -9,20 +9,23 @@ package Bank_management_system;
  *
  * @author agh
  */
-public class Account {
+public class EmployeeAccount {
     String AccountType;
     double balance;
     private String userName;
     private String password;
     static int accountID;
+    private int DOB;
 
-    public Account(String userName,String password,String AccountType, double balance) {
-        this.userName=userName;
-        this.password=password;
+    public EmployeeAccount(String userName, String password,String AccountType, double balance,int DOB) {
         this.AccountType = AccountType;
         this.balance = balance;
-        accountID++;
+        this.userName = userName;
+        this.password = password;
+        this.DOB = DOB;
     }
+
+   
 
 
     public String getAccountType() {
@@ -62,17 +65,15 @@ public class Account {
     }
 
     public static void setAccountID(int accountID) {
-        Account.accountID = accountID;
+        EmployeeAccount.accountID = accountID;
     }
 
-   
-    
-    void withDraw(double amount){
-    if (amount<balance)            
-            balance -= amount;
+    public int getDOB() {
+        return DOB;
     }
-    void Deposit (double amount){
-     balance += amount;
+
+    public void setDOB(int DOB) {
+        this.DOB = DOB;
     }
    
 }

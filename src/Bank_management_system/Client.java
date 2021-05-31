@@ -16,24 +16,24 @@ public class Client {
     String username;
     String password;
     String DOB;
-    int pin;
-    int cardNo;
-ArrayList<Client> Client;
-   
+    String AccountType;
+    double balance;
+    ArrayList <Client> Client;
 
-    public Client(String username, String password, String DOB, int pin, int cardNo, ArrayList<Client> Client) {
+    public Client(String username, String password, String DOB, String AccountType, double balance) {
         this.username = username;
         this.password = password;
         this.DOB = DOB;
-        this.pin = pin;
-        this.cardNo = cardNo;
-        this.Client = Client;
+        this.AccountType = AccountType;
+        this.balance = balance;
     }
-
- 
 
     public String getUsername() {
         return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -44,10 +44,6 @@ ArrayList<Client> Client;
         this.password = password;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getDOB() {
         return DOB;
     }
@@ -56,21 +52,30 @@ ArrayList<Client> Client;
         this.DOB = DOB;
     }
 
-    public int getPin() {
-        return pin;
+    public String getAccountType() {
+        return AccountType;
     }
 
-    public void setPin(int pin) {
-        this.pin = pin;
+    public void setAccountType(String AccountType) {
+        this.AccountType = AccountType;
     }
 
-    public int getCardNo() {
-        return cardNo;
+    public double getBalance() {
+        return balance;
     }
 
-    public void setCardNo(int cardNo) {
-        this.cardNo = cardNo;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
+
+    public ArrayList<Client> getClient() {
+        return Client;
+    }
+
+    public void setClient(ArrayList<Client> Client) {
+        this.Client = Client;
+    }
+   
    public Client login (String name, String pass)
     {
         Client cust = null;
