@@ -15,6 +15,7 @@ public class ClinetControl extends Client {
 
     Client clientUser;
     ArrayList <Client> Client;
+    ATM atm;
     
 
     public ClinetControl(String username, String password, String DOB, String AccountType, double balance) {
@@ -41,4 +42,14 @@ public class ClinetControl extends Client {
     public void updateBalance(double updatedBalace){
     clientUser.setBalance(updatedBalace);
     }
+    
+     public void transferTo(Client A1,Client A2, double x) {
+    if (x <= balance) {
+        A1.Amount_withDraw(x);
+        A2.Amount_deposit(x);
+        System.out.println("\nTransfer succesful. Tansfered: $" + A1.getBalance());
+    } else if (x > balance) {
+        System.out.println("\nTransfer failed, not enough balance!");
+    }
+}
 }

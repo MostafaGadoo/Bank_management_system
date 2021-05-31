@@ -18,6 +18,7 @@ public class Client {
     String DOB;
     String AccountType;
     double balance;
+    static int clientID;
     ArrayList <Client> Client;
 
     public Client(String username, String password, String DOB, String AccountType, double balance) {
@@ -88,6 +89,17 @@ public class Client {
         return null;
     }
       
+   void Amount_withDraw(double amount){
+        if (balance >= amount){
+        balance -=amount;
+        }
+        else {
+            System.out.println("The balance in the account is less then the amount you want to withdraw");
+        }
+   }
+   void Amount_deposit(double amount){
+     balance += amount;
+   }
     
 }
 
