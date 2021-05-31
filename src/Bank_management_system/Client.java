@@ -5,23 +5,29 @@
  */
 package Bank_management_system;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author agh
  */
+
 public class Client {
     String username;
 String password;
    String DOB;
    int pin;
    int cardNo;
+ArrayList<Client> Client;
+   
 
-    public Client(String username, String password, String DOB, int pin, int cardNo) {
+    public Client(String username, String password, String DOB, int pin, int cardNo, ArrayList<Client> Client) {
         this.username = username;
         this.password = password;
         this.DOB = DOB;
         this.pin = pin;
         this.cardNo = cardNo;
+        this.Client = Client;
     }
 
  
@@ -65,7 +71,18 @@ String password;
     public void setCardNo(int cardNo) {
         this.cardNo = cardNo;
     }
-   
+   public Client login (String name, String pass)
+    {
+        Client cust = null;
+        for (int i=0; i<Client.size(); i++)
+        { 
+            cust = (Client) Client.get(i);
+            if (cust.getUsername().equals(name) && cust.getPassword().equals(pass))
+                return cust;
+        }
+        return null;
+    }
+      
     
 }
 

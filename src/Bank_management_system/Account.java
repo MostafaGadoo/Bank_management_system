@@ -10,25 +10,20 @@ package Bank_management_system;
  * @author agh
  */
 public class Account {
-    int AccountNo;
     String AccountType;
     double balance;
-    Client owner;
+    private String userName;
+    private String password;
+    static int accountID;
 
-    public Account(int AccountNo, String AccountType, double balance, Client owner) {
-        this.AccountNo = AccountNo;
+    public Account(String userName,String password,String AccountType, double balance) {
+        this.userName=userName;
+        this.password=password;
         this.AccountType = AccountType;
         this.balance = balance;
-        this.owner = owner;
+        accountID++;
     }
 
-    public int getAccountNo() {
-        return AccountNo;
-    }
-
-    public void setAccountNo(int AccountNo) {
-        this.AccountNo = AccountNo;
-    }
 
     public String getAccountType() {
         return AccountType;
@@ -46,13 +41,31 @@ public class Account {
         this.balance = balance;
     }
 
-    public Client getOwner() {
-        return owner;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setOwner(Client owner) {
-    this.owner=owner;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public static int getAccountID() {
+        return accountID;
+    }
+
+    public static void setAccountID(int accountID) {
+        Account.accountID = accountID;
+    }
+
+   
     
     void withDraw(double amount){
     if (amount<balance)            
