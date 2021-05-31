@@ -27,6 +27,7 @@ public class Client {
         this.DOB = DOB;
         this.AccountType = AccountType;
         this.balance = balance;
+        clientID++;
     }
 
     public String getUsername() {
@@ -76,7 +77,11 @@ public class Client {
     public void setClient(ArrayList<Client> Client) {
         this.Client = Client;
     }
-   
+
+    public static int getClientID() {
+        return clientID;
+    }
+    
    public Client login (String name, String pass)
     {
         Client cust = null;

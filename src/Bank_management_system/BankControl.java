@@ -17,12 +17,12 @@ public class BankControl extends EmployeeAccount{
      EmployeeAccount accountUser;
     ArrayList <EmployeeAccount> account;
 
-    public BankControl(String userName, String password, String AccountType, double balance, int DOB) {
+    public BankControl(String userName, String password, String AccountType, double balance, String DOB) {
         super(userName, password, AccountType, balance, DOB);
     }
 
     
-    public void createAccount(String userName, String password,String AccountType, double balance,int DOB) {
+    public void createAccount(String userName, String password,String AccountType, double balance,String DOB) {
             EmployeeAccount accountUser = new EmployeeAccount(userName,password,AccountType,balance,DOB);
             account.add(accountUser);
             System.out.println("Employee account has been successfully created");

@@ -17,10 +17,10 @@ public class EmployeeAccount {
     private String userName;
     private String password;
     static int accountID;
-    private int DOB;
+    private String DOB;
     ArrayList<EmployeeAccount> Employee;
     
-    public EmployeeAccount(String userName, String password,String AccountType, double balance,int DOB) {
+    public EmployeeAccount(String userName, String password,String AccountType, double balance,String DOB) {
         this.AccountType = AccountType;
         this.balance = balance;
         this.userName = userName;
@@ -71,11 +71,11 @@ public class EmployeeAccount {
         EmployeeAccount.accountID = accountID;
     }
 
-    public int getDOB() {
+    public String getDOB() {
         return DOB;
     }
 
-    public void setDOB(int DOB) {
+    public void setDOB(String DOB) {
         this.DOB = DOB;
     }
 
