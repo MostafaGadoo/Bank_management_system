@@ -14,10 +14,10 @@ import java.util.ArrayList;
 
 public class Client {
     String username;
-String password;
-   String DOB;
-   int pin;
-   int cardNo;
+    String password;
+    String DOB;
+    int pin;
+    int cardNo;
 ArrayList<Client> Client;
    
 

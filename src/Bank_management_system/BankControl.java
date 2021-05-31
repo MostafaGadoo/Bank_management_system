@@ -6,27 +6,21 @@
 package Bank_management_system;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author Mostafa Gado
  */
-public class AccountControl extends Account {
-
-    Account accountUser;
-    ArrayList <Account> account;
+public class BankControl extends Account{
     
-    public AccountControl(String userName,String password,String AccountType, double balance) {
-        super(userName,password, AccountType, balance);
+     Account accountUser;
+    ArrayList <Account> account;
+
+    public BankControl(String userName, String password, String AccountType, double balance) {
+        super(userName, password, AccountType, balance);
     }
     
-    public void createAccount(String userName,String password,String AccountType, double balance) {
-      
-            Account AccountUser = new Account(userName,password, AccountType, balance);
-            accountUser.setAccountType(AccountType);
-            account.add(AccountUser);
-            System.out.println("Admin user has been created successfully");
-        }
     
     public boolean searchAcount(int acountID){
         for (int i =0; i < account.size();i++){
@@ -49,7 +43,16 @@ public class AccountControl extends Account {
         return null;
     }
     
-    public void changePassword(String Newpassword){
-    accountUser.setPassword(Newpassword);
-    }
+//    public Account updateAccount (int accountID){
+//    for (int i =0; i <= account.size();i++){
+//        if (accountID == accountUser.getAccountID())
+//            System.out.println("Please enter what you need to update");
+//            Scanner update = new Scanner(System.in);
+//            int Updated = update.nextInt();
+//            
+//        }   
+//        return null;
+//    }
+    
+    
 }
