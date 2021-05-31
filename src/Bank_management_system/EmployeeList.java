@@ -11,10 +11,13 @@ package Bank_management_system;
  */
 public class EmployeeList extends Employee{
     
-    void loanRequest(){}
+    void loanRequest(){
     
+    }
     
-    void provideInformation (){}
+    void provideInformation (){
+    
+    }
     
     
 }
