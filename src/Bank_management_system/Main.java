@@ -11,7 +11,7 @@ package Bank_management_system;
  */
 public class Main {
     public static void main(String[] args) {
-        // 1) add the employees to the array list  (UserName, password, accountType, balance, DOB)
+        // 1) add the employees to the array list  (UserName, password, accountType, balance, DOB
         
         
     }

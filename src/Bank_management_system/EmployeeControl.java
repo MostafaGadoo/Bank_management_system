@@ -12,12 +12,13 @@ import java.util.Scanner;
  *
  * @author Mostafa Gado
  */
-public class BankControl extends EmployeeAccount{
+public class EmployeeControl extends EmployeeAccount{
     
      EmployeeAccount accountUser;
     ArrayList <EmployeeAccount> account;
+    
 
-    public BankControl(String userName, String password, String AccountType, double balance, String DOB) {
+    public EmployeeControl(String userName, String password, String AccountType, double balance, String DOB) {
         super(userName, password, AccountType, balance, DOB);
     }
 
@@ -49,7 +50,7 @@ public class BankControl extends EmployeeAccount{
         return null;
     }
     
-
+ 
     
     
 }

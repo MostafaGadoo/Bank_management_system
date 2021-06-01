@@ -13,7 +13,8 @@ package Bank_management_system;
 public class Bank{
     String address;
     int code;
-    
+     EmployeeAccount accountUser;
+     
     public String getAddress() {
         return address;
     }
@@ -33,6 +34,12 @@ public class Bank{
 
     public void setCode(int code) {
         this.code = code;
-    }      
+    }   
+    
+       void addEmployeeSalary (double amount){
+    double Employee_accountBalance =accountUser.getBalance();
+            Employee_accountBalance += amount;
+            System.out.println("The salary is added");
+    }
 }
 
