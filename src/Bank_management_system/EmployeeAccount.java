@@ -6,6 +6,7 @@
 package Bank_management_system;
 
 import java.util.ArrayList;
+//import java.sql;
 
 /**
  *
@@ -101,9 +102,14 @@ public class EmployeeAccount {
     }
    
     public void Employee_createAccount(String userName, String password,String AccountType, double balance,String DOB) {
-            EmployeeAccount accountUser = new EmployeeAccount(userName,password,AccountType,balance,DOB);
+        try{
+        EmployeeAccount accountUser = new EmployeeAccount(userName,password,AccountType,balance,DOB);
             Employee.add(accountUser);
             System.out.println("Employee account has been successfully created");
+                } catch(Exception Error){System.out.println("Thank You");}
+        
+        
+        
         }
 }
 
