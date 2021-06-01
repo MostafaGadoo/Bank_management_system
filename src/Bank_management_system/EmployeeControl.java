@@ -23,10 +23,8 @@ public class EmployeeControl extends EmployeeAccount{
     }
 
     
-    public void createAccount(String userName, String password,String AccountType, double balance,String DOB) {
-            EmployeeAccount accountUser = new EmployeeAccount(userName,password,AccountType,balance,DOB);
-            account.add(accountUser);
-            System.out.println("Employee account has been successfully created");
+    public void verifyAccount(String userName, String password,String AccountType, double balance,String DOB) {
+         accountUser.createAccount(userName, password, AccountType, balance, DOB);
         }
     
     public boolean searchAcount(int acountID){
@@ -50,7 +48,9 @@ public class EmployeeControl extends EmployeeAccount{
         return null;
     }
     
- 
+    void showLogin(String username,String password){
+    accountUser.login(username, password);
+    }
     
     
 }

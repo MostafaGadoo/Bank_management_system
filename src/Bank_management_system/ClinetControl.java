@@ -21,14 +21,9 @@ public class ClinetControl extends Client {
     public ClinetControl(String username, String password, String DOB, String AccountType, double balance) {
         super(username, password, DOB, AccountType, balance);
     }
-
-   
     
-    
-    public void createAccount(String username, String password, String DOB, String AccountType, double balance) {
-            Client clientUser = new Client(username,password, DOB, AccountType,balance);
-            Client.add(clientUser);
-            System.out.println("Client account has been successfully created");
+    public void verifyAccount(String username, String password, String DOB, String AccountType, double balance) {
+           clientUser.createAccount(username, password, DOB, AccountType, balance);
         }
     
     public void changePassword(String Newpassword){
@@ -51,5 +46,10 @@ public class ClinetControl extends Client {
     } else if (x > balance) {
         System.out.println("\nTransfer failed, not enough balance!");
     }
-}
+    }
+     
+     void showLogin(String userName, String password){
+     clientUser.login(userName, password);
+     }
+     
 }

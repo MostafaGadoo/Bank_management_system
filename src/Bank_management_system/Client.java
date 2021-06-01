@@ -105,6 +105,12 @@ public class Client {
    void Amount_deposit(double amount){
      balance += amount;
    }
+   public void createAccount(String username, String password, String DOB, String AccountType, double balance) {
+            Client clientUser = new Client(username,password, DOB, AccountType,balance);
+            Client.add(clientUser);
+            System.out.println("Client account has been successfully created");
+        }
+    
     
 }
 

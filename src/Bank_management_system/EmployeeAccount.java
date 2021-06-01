@@ -100,5 +100,10 @@ public class EmployeeAccount {
         return null;
     }
    
+    public void createAccount(String userName, String password,String AccountType, double balance,String DOB) {
+            EmployeeAccount accountUser = new EmployeeAccount(userName,password,AccountType,balance,DOB);
+            Employee.add(accountUser);
+            System.out.println("Employee account has been successfully created");
+        }
 }
 
