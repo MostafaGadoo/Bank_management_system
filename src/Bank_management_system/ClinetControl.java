@@ -48,8 +48,8 @@ public class ClinetControl extends Client {
     }
     }
      
-     void showLogin(String userName, String password){
-     clientUser.login(userName, password);
+     void clinet_showLogin(String userName, String password){
+     clientUser.client_login(userName, password);
      }
      
 }

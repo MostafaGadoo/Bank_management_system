@@ -24,7 +24,7 @@ public class EmployeeControl extends EmployeeAccount{
 
     
     public void verifyAccount(String userName, String password,String AccountType, double balance,String DOB) {
-         accountUser.createAccount(userName, password, AccountType, balance, DOB);
+         accountUser.Employee_createAccount(userName, password, AccountType, balance, DOB);
         }
     
     public boolean searchAcount(int acountID){
@@ -48,8 +48,8 @@ public class EmployeeControl extends EmployeeAccount{
         return null;
     }
     
-    void showLogin(String username,String password){
-    accountUser.login(username, password);
+    void Employee_showLogin(String username,String password){
+    accountUser.Employee_login(username, password);
     }
     
     

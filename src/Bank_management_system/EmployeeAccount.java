@@ -88,7 +88,7 @@ public class EmployeeAccount {
         this.Employee = Employee;
     }
     
-    public EmployeeAccount login (String name, String pass)
+    public EmployeeAccount Employee_login (String name, String pass)
     {
         EmployeeAccount cust  = null;
         for (int i=0; i<Employee.size(); i++)
@@ -100,7 +100,7 @@ public class EmployeeAccount {
         return null;
     }
    
-    public void createAccount(String userName, String password,String AccountType, double balance,String DOB) {
+    public void Employee_createAccount(String userName, String password,String AccountType, double balance,String DOB) {
             EmployeeAccount accountUser = new EmployeeAccount(userName,password,AccountType,balance,DOB);
             Employee.add(accountUser);
             System.out.println("Employee account has been successfully created");

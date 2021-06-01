@@ -82,7 +82,7 @@ public class Client {
         return clientID;
     }
     
-   public Client login (String name, String pass)
+   public Client client_login (String name, String pass)
     {
         Client cust = null;
         for (int i=0; i<Client.size(); i++)
