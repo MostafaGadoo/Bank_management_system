@@ -25,7 +25,7 @@ public class EmployeeControl extends EmployeeAccount{
     }
 
     
-    public void showSignUp(String userName, String password,String AccountType, double balance,String DOB) {
+    public void verifySignUp(String userName, String password,String AccountType, double balance,String DOB) {
          accountUser.Employee_createAccount(userName, password, AccountType, balance, DOB);
         }
     
