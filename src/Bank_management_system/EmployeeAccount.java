@@ -18,7 +18,8 @@ public class EmployeeAccount {
     private String password;
     static int accountID;
     private String DOB;
-    ArrayList<EmployeeAccount> Employee;
+    ArrayList<EmployeeAccount> Employee; // the employees are added manualy by the system admins
+    
     
     public EmployeeAccount(String userName, String password,String AccountType, double balance,String DOB) {
         this.AccountType = AccountType;

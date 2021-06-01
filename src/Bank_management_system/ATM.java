@@ -15,8 +15,8 @@ public class ATM {
     private String location;
     private int ATM_id;
     private double ATM_balance;
-    private EmployeeAccount AccountBalance;
-
+    private EmployeeAccount Employee_AccountBalance;
+    private Client Client_AccountBalance;
     
 
     public ATM(String location, int ATM_id, double ATM_balance, String address) {
@@ -50,32 +50,52 @@ public class ATM {
     }
 
     public EmployeeAccount getBalance() {
-        return AccountBalance;
+        return Employee_AccountBalance;
     }
     
-    boolean checkBalance(){
-        
-        if (AccountBalance.getBalance() <= ATM_balance)
+    boolean checkBalance(double amount){
+        if (amount<= ATM_balance)
         return true;
         else
         return false;
     }
-    
-    void withdraw(double amount){
-        double accountBalance = AccountBalance.getBalance();
-        if (checkBalance() == true){
+  
+    void Employee_withdraw(double amount){
+        double accountBalance = Employee_AccountBalance.getBalance();
+        if (checkBalance(amount) == true){
             if(accountBalance >= amount){
             ATM_balance -= amount;
             accountBalance -= amount;
+            }else {
+                System.out.println("No enough money in the ATM");
             }
         }
     }
     
-    void deposit(double amount){
-    double accountBalance =AccountBalance.getBalance();
-     if (checkBalance() == true){
+    void Employee_deposit(double amount){
+    double accountBalance =Employee_AccountBalance.getBalance();
             ATM_balance -= amount;
             accountBalance += amount;
+            System.out.println("Thank you for the transaction");
+    }
+    
+    void Client_withdraw(double amount){
+        double accountBalance = Client_AccountBalance.getBalance();
+        if (checkBalance(amount) == true){
+            if(accountBalance >= amount){
+            ATM_balance -= amount;
+            accountBalance -= amount;
+            }else {
+                System.out.println("No enough money in the ATM");
+            }
         }
     }
+    void Client_deposit(double amount){
+    double accountBalance = Client_AccountBalance.getBalance();
+            ATM_balance -= amount;
+            accountBalance += amount;
+            System.out.println("Thank you for the transaction");
+    }
+    
+    
 }
