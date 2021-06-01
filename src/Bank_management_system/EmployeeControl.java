@@ -15,6 +15,8 @@ import java.util.Scanner;
 public class EmployeeControl extends EmployeeAccount{
     
      EmployeeAccount accountUser;
+     Client clientUser;
+      ArrayList <Client> Client;
     ArrayList <EmployeeAccount> account;
     
 
@@ -23,13 +25,13 @@ public class EmployeeControl extends EmployeeAccount{
     }
 
     
-    public void verifyAccount(String userName, String password,String AccountType, double balance,String DOB) {
+    public void showSignUp(String userName, String password,String AccountType, double balance,String DOB) {
          accountUser.Employee_createAccount(userName, password, AccountType, balance, DOB);
         }
     
-    public boolean searchAcount(int acountID){
-        for (int i =0; i < account.size();i++){
-            if(accountID== accountUser.getAccountID()){
+    public boolean searchAcount(int nationalID){
+        for (int i =0; i < Client.size();i++){
+            if(nationalID == clientUser.getClientID()){ // shange the serach to search for the national ID
                 System.out.println("The account is found");
                 return true;
             }else {
@@ -40,10 +42,10 @@ public class EmployeeControl extends EmployeeAccount{
     }
         
     
-    public EmployeeAccount deleteAccount(int accountID){
-    for (int i =0; i <= account.size();i++){
-        if (accountID == accountUser.getAccountID())
-        return account.remove(accountID);
+    public Client deleteAccount(int nationalID){
+    for (int i =0; i <= Client.size();i++){
+        if (nationalID == clientUser.getClientID())
+        return Client.remove(nationalID);
         }   
         return null;
     }
