@@ -5,7 +5,7 @@
  */
 package Bank_management_system;
 
-import java.util.ArrayList;
+
 
 /**
  *
@@ -61,11 +61,11 @@ public class ATM {
     }
   
     void Employee_withdraw(double amount){
-        double accountBalance = Employee_AccountBalance.getBalance();
+        double Employee_accountBalance = Employee_AccountBalance.getBalance();
         if (checkBalance(amount) == true){
-            if(accountBalance >= amount){
+            if(Employee_accountBalance >= amount){
             ATM_balance -= amount;
-            accountBalance -= amount;
+            Employee_accountBalance -= amount;
             }else {
                 System.out.println("No enough money in the ATM");
             }
@@ -73,27 +73,27 @@ public class ATM {
     }
     
     void Employee_deposit(double amount){
-    double accountBalance =Employee_AccountBalance.getBalance();
-            ATM_balance -= amount;
-            accountBalance += amount;
+    double Employee_accountBalance =Employee_AccountBalance.getBalance();
+            ATM_balance += amount;
+            Employee_accountBalance += amount;
             System.out.println("Thank you for the transaction");
     }
     
     void Client_withdraw(double amount){
-        double accountBalance = Client_AccountBalance.getBalance();
+        double Clinet_accountBalance = Client_AccountBalance.getBalance();
         if (checkBalance(amount) == true){
-            if(accountBalance >= amount){
+            if(Clinet_accountBalance >= amount){
             ATM_balance -= amount;
-            accountBalance -= amount;
+            Clinet_accountBalance -= amount;
             }else {
                 System.out.println("No enough money in the ATM");
             }
         }
     }
     void Client_deposit(double amount){
-    double accountBalance = Client_AccountBalance.getBalance();
-            ATM_balance -= amount;
-            accountBalance += amount;
+    double Clinet_accountBalance = Client_AccountBalance.getBalance();
+            ATM_balance += amount;
+            Clinet_accountBalance += amount;
             System.out.println("Thank you for the transaction");
     }
     
